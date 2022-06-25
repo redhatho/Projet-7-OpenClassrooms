@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { api } from '../utils/api';
+import { api } from '../Utils/api';
 
 const token = JSON.parse(localStorage.getItem('token'));
 
