@@ -25,7 +25,7 @@ export default function SignIn() {
                 password: user.password,
             };
             axios
-                .post(api + '/api/auth/login', data)
+                .post(api + '/api/auth/login/', data)
                 .then((response) => {
                     localStorage.setItem('token', JSON.stringify(response.data));
                     navigate('/');
@@ -60,7 +60,7 @@ export default function SignIn() {
 
     return (
         <>
-            <div className="log-signin">
+            <div className="card-log signin">
                 <form className="form form-signin" action="" onSubmit={handleLogin} id="sign-up">
                     <h2>Se connecter</h2>
                     <div className="title-content">

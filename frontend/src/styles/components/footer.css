@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    background-color: #ffd7d7;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+}
+
+.footer-logo {
+      background-repeat: no-repeat;
+}
+  

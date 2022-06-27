@@ -1,0 +1,9 @@
+.err {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 25px;
+}
+  
+.err.post-button {
+    padding: 20px;
+}

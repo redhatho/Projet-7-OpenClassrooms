@@ -25,7 +25,7 @@ export default function SignUp() {
         };
 
         axios
-            .post(api + '/api/auth/signup', data)
+            .post(api + '/api/auth/signup/', data)
             .then((res) => {
                 if (res.data.error) {
                     errorUser.innerHTML = 'Cette adresse mail est déjà utilisée. Veuillez en choisir une autre';
@@ -63,7 +63,7 @@ export default function SignUp() {
     return (
         <>
             {formSubmit ? (
-                <div className="log-signup">
+                <div className="card-log signup">
                     <form className="form form-signup" action="" onSubmit={handleForm} id="sign-up">
                         <h2>S'enregistrer</h2>
                         <div className="title-content">
@@ -124,12 +124,12 @@ export default function SignUp() {
                                 <br />
                                 <input
                                     className="input-password"
-                                    type="name"
-                                    placeholder="Nom"
+                                    type="password"
+                                    placeholder="Mot de passe"
                                     onChange={handleInput}
                                     value={user.password}
-                                    pattern="(?=.*\d)(?=.*[a-z]).{6,20}"
-                                    title="Votre mot de passe n'est pas assez sécurisé. Votre mot de passe doit faire au moins 8 caractères, 20 au maximum, contenir au moins 1 chiffre et ne doit pas faire d'espaces."
+                                    pattern="(?=.*\d)(?=.*[a-z]).{8,20}"
+                                    title="Votre mot de passe doit faire au moins 8 caractères, 20 au maximum, contenir au moins 1 chiffre et ne doit pas faire d'espaces."
                                     required />
                             </label>
                         </div>

@@ -1,25 +1,15 @@
 const express = require('express');
 const helmet = require('helmet');
 require('dotenv').config();
-const mongoose = require('mongoose');
+const cors = require("cors");
 const path = require('path');
+const connectDB = require('./config/db');
 
 const postRoutes = require('./routes/post');
 const userRoutes = require('./routes/user');
 
 const app = express();
 app.use(helmet());
-
-
-mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-)
-    .then(() => console.log('Connexion à MongoDB réussie !'))
-    .catch(() => console.log('Connexion à MongoDB échouée !'));
-
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -29,7 +19,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(cors());
 app.use(express.json())
+// Connect to database
+connectDB();
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/auth', userRoutes);

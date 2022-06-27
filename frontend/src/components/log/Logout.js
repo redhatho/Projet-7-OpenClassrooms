@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BiLogIn } from 'react-icon/bi';
+import { BiLogIn } from 'react-icons/bi';
 
 export default function Logout() {
     const navigate = useNavigate();
@@ -12,8 +12,8 @@ export default function Logout() {
 
     return (
         <>
-            <button onClick={logout} className="logout-button" aria-label="Déconnexion">
-                <BiLogIn className="logout-icon-button" aria-label="Déconnexion" />
+            <button onClick={logout} className=" button-logout" aria-label="Déconnexion">
+                <BiLogIn className=" button-logout-icon-logout" aria-label="Déconnexion" />
             </button>
         </>
     );

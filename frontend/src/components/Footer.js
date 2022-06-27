@@ -1,5 +1,5 @@
 import React from 'react';
-import footerLogo from '../Assets/icon-left-font.png';
+import footerLogo from '../Assets/icon-left-font-monochrome-white.png';
 
 export default function Footer() {
     return (
@@ -7,9 +7,9 @@ export default function Footer() {
             <img className='footer-logo'
                 src={footerLogo}
                 alt='logo Groupomania'
-                style={{ height: 150, width: 150 }}
-                height='150'
-                width='150'
+                style={{ height: 300, width: 300 }}
+                height='300'
+                width='300'
             />
         </footer>
     )

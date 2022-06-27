@@ -20,7 +20,10 @@ export default function Log() {
         <>
             <div className="connection-form">
                 <ul>
-                    <li onClick={handleForm} id="register" className={signInForm ? 'button-activation' : null}>
+                    <li onClick={handleForm} id="register" className={signUpForm ? 'button-activation' : null}>
+                        S'enregistrer
+                    </li>
+                    <li onClick={handleForm} id="login" className={signInForm ? 'button-activation' : null}>
                         Se connecter
                     </li>
                 </ul>

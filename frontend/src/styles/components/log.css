@@ -1,0 +1,14 @@
+.img-logout {
+    width: 80px;
+    height: auto;
+    padding-left: 5px;
+}
+  
+  
+.usernotfound, .errorregister {
+    margin: 5px;
+    text-align: center;
+    color: red;
+    font-style: italic;
+}
+  

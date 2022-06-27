@@ -1,0 +1,16 @@
+.icon-like {
+    cursor: pointer;
+}
+
+.icon-like-liked {
+      color: #fd2d01;
+}
+  
+.post-like {
+    margin-top: 12px;
+  
+    font-weight: 700;
+    border: transparent;
+    background-color: transparent;
+    font-size: 30px;
+}
