@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logout from './log/Logout';
 import axios from 'axios';
-import { api } from '../Utils/api';
+import { api } from '../utils/api';
 
 export default function Nav() {
     const [userData, setUserData] = useState('nav');

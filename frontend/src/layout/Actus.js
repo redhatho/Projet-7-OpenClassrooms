@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import NavBar from "../components/navBar";
 import CardPost from '../components/post/cardPost'
 import Newpost from '../components/post/newPost';
-import { getAllPost } from '../Manager/postManager';
+import { getAllPost } from '../manager/postManager';
 
 export default function Actus() {
     const dispatch = useDispatch();

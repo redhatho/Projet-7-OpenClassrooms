@@ -1,5 +1,5 @@
 import React from 'react';
-import footerLogo from '../Assets/icon-left-font-monochrome-white.png';
+import footerLogo from '../assets/icon-left-font-monochrome-white.png';
 
 export default function Footer() {
     return (

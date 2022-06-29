@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { api } from '../../Utils/api';
-import { deletePost } from '../../Manager/postManager';
+import { api } from '../../utils/api';
+import { deletePost } from '../../manager/postManager';
 import Like from './like';
 
 import {
@@ -25,7 +25,7 @@ export default function Cardpost(props) {
         imagePost: props.imagePost,
     });
 
-    const { postArray, userInfo } = useSelector((state) => ({
+    const { postArray } = useSelector((state) => ({
         ...state.postReducer,
         ...state.userReducer,
     }));
@@ -34,7 +34,7 @@ export default function Cardpost(props) {
     const id = JSON.parse(localStorage.getItem('token')).userId;
     useEffect(() => {
         axios
-            .get(api + '/api/posts/', {
+            .get(api + '/api/post/', {
                 headers: { Authorization: `Bearer ${token.token}` },
             })
             .then((response) => {

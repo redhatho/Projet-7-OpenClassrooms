@@ -4,7 +4,7 @@ import Actus from '../layout/Actus';
 import NotFound from '../layout/NotFound';
 import HomePage from '../layout/Homepage';
 import Post from '../components/post/Post';
-import Auth from '../Utils/Auth';
+import Auth from '../utils/Auth';
 
 export default function Router() {
     return (

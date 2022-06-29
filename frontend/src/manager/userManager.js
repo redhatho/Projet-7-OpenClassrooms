@@ -7,7 +7,7 @@ export function getLog(email, password) {
         password: password,
     };
     return axios
-        .post(api + '/api/auth/login', user)
+        .post(api + '/api/user/login', user)
         .then((reponse) => {
             console.log(reponse);
             return reponse;
@@ -26,7 +26,7 @@ export function getSignup(email, password, firstName, lastName) {
         lastName: lastName,
     };
     return axios
-        .post(api + '/api/auth/signup', user)
+        .post(api + '/api/user/signup', user)
         .then((reponse) => {
             console.log(reponse);
         })
@@ -37,7 +37,7 @@ export function getSignup(email, password, firstName, lastName) {
 
 export function getUser(id, token) {
     return axios
-        .get(api + '/api/auth/' + id, {
+        .get(api + '/api/user/' + id, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',

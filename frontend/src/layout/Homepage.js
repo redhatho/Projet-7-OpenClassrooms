@@ -1,6 +1,6 @@
 
 import React from 'react';
-import logo from '../Assets/icon-left-font.png';
+import logo from '../assets/icon-left-font.png';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {

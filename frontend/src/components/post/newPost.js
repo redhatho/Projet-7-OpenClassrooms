@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { newPost } from '../../Manager/postManager';
+import { newPost } from '../../manager/postManager';
 import { BiUpload } from 'react-icons/bi';
 import { FaShare } from 'react-icons/fa';
 

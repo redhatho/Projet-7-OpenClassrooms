@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BiUpload } from 'react-icons/bi';
 
-import { getPost } from '../../Manager/postManager';
-import { api } from '../../Utils/api';
+import { getPost } from '../../manager/postManager';
+import { api } from '../../utils/api';
 import axios from 'axios';
 import NavBar from '../navBar';
 
@@ -46,7 +46,7 @@ export default function Post(props) {
         };
 
         axios
-            .put(api + '/api/posts/' + postId, data, {
+            .put(api + '/api/post/' + postId, data, {
                 headers: {
                     Authorization: 'Bearer ' + token.token,
                     Accept: 'application/json',
@@ -67,7 +67,7 @@ export default function Post(props) {
         const formData = new FormData();
         formData.append('images', imagePost);
         axios
-            .put(api + '/api/posts/' + postId, formData, {
+            .put(api + '/api/post/' + postId, formData, {
                 headers: {
                     Authorization: 'Bearer ' + token.token,
                     'Content-Type': 'application/json'

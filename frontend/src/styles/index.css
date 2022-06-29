@@ -1,13 +1,13 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import './App.css';
+@import './components/footer.css';
+@import './components/post.css';
+@import './components/like.css';
+@import './components/card.css';
+@import './components/header.css';
+@import './components/NavBar.css';
+@import './components/newPost.css';
+@import './components/log.css';
+@import './layout/Actus.css';
+@import './layout/Homepage.css';
+@import './layout/Home.css';
+@import './layout/NotFound.css';

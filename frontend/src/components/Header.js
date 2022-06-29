@@ -1,5 +1,5 @@
 import React from 'react';
-import imgFromAssets from '../Assets/icon-left-font-monochrome-white.png';
+import imgFromAssets from '../assets/icon-left-font-monochrome-white.png';
 
 export default function Header() {
     return (

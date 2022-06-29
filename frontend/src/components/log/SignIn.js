@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { api } from '../../Utils/api';
+import { api } from '../../utils/api';
+
 import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
@@ -25,7 +26,7 @@ export default function SignIn() {
                 password: user.password,
             };
             axios
-                .post(api + '/api/auth/login/', data)
+                .post(api + '/api/user/login/', data)
                 .then((response) => {
                     localStorage.setItem('token', JSON.stringify(response.data));
                     navigate('/');

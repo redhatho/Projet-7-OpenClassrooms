@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SignIn from './SignIn';
 import axios from 'axios';
-import { api } from '../../Utils/api';
+import { api } from '../../utils/api';
 
 export default function SignUp() {
     const [formSubmit, setFormSubmit] = useState(true);
@@ -25,7 +25,7 @@ export default function SignUp() {
         };
 
         axios
-            .post(api + '/api/auth/signup/', data)
+            .post(api + '/api/user/signup/', data)
             .then((res) => {
                 if (res.data.error) {
                     errorUser.innerHTML = 'Cette adresse mail est déjà utilisée. Veuillez en choisir une autre';

@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { api } from '../Utils/api';
+import { api } from '../utils/api';
 
 const token = JSON.parse(localStorage.getItem('token'));
 
 export function getAllPost(num) {
     return axios
-        .get(api + '/api/posts/', {
+        .get(api + '/api/post/', {
             headers: { Authorization: 'Bearer ' + token.token }
         })
         .then((response) => {
@@ -21,7 +21,7 @@ export function getAllPost(num) {
 
 export function getPost(postId) {
     return axios
-        .get(api + '/api/posts/' + postId, {
+        .get(api + '/api/post/' + postId, {
             headers: { Authorization: 'Bearer ' + token.token }
         })
         .then((response) => {
@@ -40,7 +40,7 @@ export function newPost(description, imagePost) {
     data.append('imagePost', imagePost);
     data.append('userId', token.userId);
     return axios
-        .post(api + '/api/posts', data, {
+        .post(api + '/api/post', data, {
             headers: {
                 Authorization: 'Bearer ' + token.token,
                 Accept: 'application/json',
@@ -65,7 +65,7 @@ export function updatePost(postId, imagePost, description) {
     }
     if (description || imagePost) {
         return axios
-            .post(api + '/api/posts/' + postId, data, {
+            .post(api + '/api/post/' + postId, data, {
                 headers: {
                     Authorization: 'Bearer ' + token.token,
                     Accept: 'application/json',
@@ -85,7 +85,7 @@ export function updatePost(postId, imagePost, description) {
 
 export function deletePost(postId) {
     return axios
-        .delete(api + '/api/posts/' + postId, {
+        .delete(api + '/api/post/' + postId, {
             headers: {
                 Authorization: 'Bearer ' + token.token,
                 Accept: 'application/json',
@@ -108,7 +108,7 @@ export function postLikes(postId, likes) {
         userId: token.userId
     };
     return axios
-        .post(api + '/api/posts' + postId, dataLikes, {
+        .post(api + '/api/post/' + postId, dataLikes, {
             headers: {
                 Authorization: 'Bearer ' + token.token,
                 Accept: 'application/json',
@@ -127,7 +127,7 @@ export function postLikes(postId, likes) {
 
 export function allLikes() {
     return axios
-        .get(api + '/api/posts', {
+        .get(api + '/api/post', {
             headers: {
                 Authorization: 'Bearer ' + token.token,
                 Accept: 'application/json',

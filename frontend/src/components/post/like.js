@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { api } from '../../Utils/api';
+import { api } from '../../utils/api';
 import { BiLike } from 'react-icons/bi';
 
 function Like(props) {
@@ -11,7 +11,7 @@ function Like(props) {
 
     const getLikes = async () => {
         const { data } = await axios.get(
-            api + '/api/posts/like',
+            api + '/api/post/like',
             { postPostId: props.postPostId },
             {
                 headers: {
@@ -36,7 +36,7 @@ function Like(props) {
     const likePost = (postId) => {
         axios
             .post(
-                api + '/api/posts/' + postId,
+                api + '/api/post/' + postId,
                 { postPostId: props.postPostId },
                 {
                     headers: {
