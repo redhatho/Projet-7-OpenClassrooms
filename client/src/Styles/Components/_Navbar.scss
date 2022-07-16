@@ -1,0 +1,78 @@
+.nav-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  gap: 50px;
+  font-weight: 700;
+  border-bottom: 1px dotted $color-primary;
+  @media screen and (max-width: 700px) {
+    display: flex;
+    margin: 20px;
+    gap: 50px;
+    font-weight: 700;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  &__hello {
+    color: $color-primary;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    @media screen and (max-width: 700px) {
+      justify-content: center;
+    }
+  }
+  &__picture {
+    width: 50px;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+  h5 {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 5px;
+  }
+}
+
+.nav-item {
+  display: flex;
+  gap: 20px;
+  @media screen and (max-width: 700px) {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+  a,
+  .btn-logout {
+    &__icon-logout {
+      font-size: 25px;
+    }
+    @media screen and (max-width: 700px) {
+      padding: 18px;
+    }
+    background-color: $color-secondary;
+    padding: 20px;
+    font-size: 20px;
+
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: $color-tertiary;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 45px;
+    border: transparent;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}
