@@ -13,10 +13,6 @@ export default function Footer() {
         height="150"
         width="150"
       />
-      <a className="footer__link" href="#">
-        Un problème? Contactez un admin{' '}
-        <GoMail className="footer__icon"  />
-      </a>
     </footer>
   );
 }

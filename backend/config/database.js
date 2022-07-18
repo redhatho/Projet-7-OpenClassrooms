@@ -1,7 +1,7 @@
-//init du module sequelize pour mysql
+//Init du module sequelize pour mysql
 const { Sequelize } = require('sequelize');
 
-//IMPORTATION DES variable d'environnement
+//Variable d'environnement
 require('dotenv').config();
 
 const sequelize = new Sequelize(

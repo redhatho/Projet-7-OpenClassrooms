@@ -23,7 +23,7 @@ export default function Comment(props) {
     ...state.commentReducer,
   }));
 
-  // fonction pour supprimer un commentaire
+  // Fonction pour supprimer un commentaire
   const handleDeleteComm = (commentid) => {
     async function awaitDelComment() {
       const result = await deleteComment(commentid);
@@ -48,7 +48,7 @@ export default function Comment(props) {
       });
     }
   };
-  //fonction pour update d'un comm
+  //Fonction pour update d'un comm
   const updateComment = (commentid) => {
     async function awaitEditComment() {
       const result = await editCmt(commentid, comment.message);
@@ -65,7 +65,7 @@ export default function Comment(props) {
     window.location.reload();
   };
 
-  // toggle pour input d'update d'un comm
+  // Toggle pour input d'update d'un comm
   const handleToggle = () => {
     setToggle(!toggle);
   };

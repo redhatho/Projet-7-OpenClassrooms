@@ -1,7 +1,7 @@
 const Comment = require('../models/comment.model');
 const User = require('../models/user.model');
 
-//CREER UN COMM
+//Créer un commentaire
 exports.createComment = (req, res, next) => {
   const comment = new Comment({
     ...req.body,
@@ -16,21 +16,21 @@ exports.createComment = (req, res, next) => {
       res.status(401).json({ message: error });
     });
 };
-//SUPPRIMER UN COMM
+//Supprimer un commentaire
 exports.deleteComment = (req, res, next) => {
   Comment.destroy({ where: { commentId: req.params.id } })
     .then(() => res.status(200).json({ message: 'Commentaire supprimé' }))
     .catch((error) => res.status(400).json({ error }));
 };
 
-//VOIR UN COMM
+//Voir un commentaire
 exports.getOneComment = (req, res, next) => {
   Comment.findByPk({ where: { id: req.params.id } })
     .then((comment) => res.status(200).json(comment))
     .catch((error) => res.status(404).json({ error }));
 };
 
-//VOIR TOUS LES COMM
+//Voir tout les commentaires
 exports.getAllComment = (req, res, next) => {
   Comment.findAll({
     raw: true,
@@ -46,7 +46,7 @@ exports.getAllComment = (req, res, next) => {
     });
 };
 
-//MODIFIER UN COMM
+//Modifier un commentaire
 exports.modifyComment = (req, res, next) => {
   const updateComment = req.body;
 

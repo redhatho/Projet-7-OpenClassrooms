@@ -5,14 +5,11 @@ const Comment = require('../models/comment.model');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 
-// //IMPORTATION DES variable d'environnement
+// //Variable d'environnement
 require('dotenv').config();
 
-//CREATION POST
-
+//Création d'un post
 exports.createPost = (req, res, next) => {
-  console.log('hello world');
-  console.log(req);
   const postObject = req.file
     ? {
       ...req.body,
@@ -34,11 +31,10 @@ exports.createPost = (req, res, next) => {
     .catch((error) => res.status(401).json({ message: error }));
 };
 
-//MODIFICATION D UN POST
+//Modification d'un post
 exports.updatePost = (req, res, next) => {
   let token = req.headers.authorization.split(' ')[1];
   let decodedToken = jwt.verify(token, '${process.env.TOKEN}');
-  // let userId = decodedToken.userId;
   Post.findOne({ where: { postId: req.params.id } })
     .then((post) => {
       if (post.userId === decodedToken.userId || decodedToken.admin) {
@@ -70,7 +66,7 @@ exports.updatePost = (req, res, next) => {
     .catch((error) => res.status(500).json({ message: error }));
 };
 
-//TROUVER UN POST
+//Trouver un post
 exports.readOnePost = (req, res, next) => {
   Post.findOne({ where: { postId: req.params.id } })
     .then((post) => {
@@ -83,7 +79,7 @@ exports.readOnePost = (req, res, next) => {
     });
 };
 
-//TROUVER TOUS LES POST
+//Trouver tout les posts
 exports.readAllPost = (req, res, next) => {
   Post.findAll({
     raw: true,
@@ -117,7 +113,7 @@ exports.readAllPost = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 };
 
-//SUPPRIMER UN POST
+//Supprimer un post
 exports.deletePost = (req, res, next) => {
   Post.findOne({ where: { postId: req.params.id } })
     .then((post) => {

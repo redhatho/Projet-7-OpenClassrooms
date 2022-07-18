@@ -40,7 +40,6 @@ export default function Post(props) {
 
   const updateCurrentPost = () => {
     const data = {
-      // postId: currentPost.postId,
       description: currentPost.description,
       imagePost: currentPost.imagePost,
     };
@@ -66,7 +65,6 @@ export default function Post(props) {
   const updateImagePost = () => {
     const formData = new FormData();
     formData.append('images', imagePost);
-    // formData.append('userId', userId);
 
     axios
       .put(api + '/api/post/' + postId, formData, {

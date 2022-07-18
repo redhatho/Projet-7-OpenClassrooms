@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-//import de l'icone de fléche via react-icon
+//Import de l'icone de flèche via react-icon
 import { FaAngleUp } from 'react-icons/fa';
 
 const ScrollToTop = () => {
-  //state qui controle la visibilité du bouton scrolltotop
+  //State qui controle la visibilité du bouton scrolltotop
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   const visibleScroll = () => {
-    // sur true quand l'utilisateur fait défiler 500pixels
+    // Sur true quand l'utilisateur fait défiler 500pixels
     if (window.pageYOffset > 500) {
       setShowTopBtn(true);
     } else {
@@ -15,7 +15,7 @@ const ScrollToTop = () => {
     }
   };
 
-  //fonction pour la gestion onClick qui ramène vers le haut
+  //Fonction pour la gestion onClick qui ramène vers le haut
   const goToTop = () => {
     window.scrollTo({
       top: 0,
@@ -23,7 +23,7 @@ const ScrollToTop = () => {
     });
   };
   useEffect(() => {
-    // evenement qui définit l'état du state
+    // Evenement qui définit l'état du state
     window.addEventListener('scroll', visibleScroll);
     return () => {
       window.removeEventListener('scroll', visibleScroll);

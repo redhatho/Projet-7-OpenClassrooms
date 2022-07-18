@@ -17,7 +17,7 @@ import {
 
 import { Link } from 'react-router-dom';
 
-//permet de mettre la date sur post et commentaires en FR
+//Permet de mettre la date sur post et commentaires en FR
 import moment from 'moment';
 import 'moment/locale/fr';
 moment.locale('fr');
@@ -53,7 +53,7 @@ export default function Cardpost(props) {
   }, [token.token]);
 
   /*---------------*/
-  //RECUPERE TOUS LES COMM
+  //Récupère tout les commentaires
   const [comment, setComment] = useState({
     User: userInfo,
     message: '',
@@ -119,7 +119,7 @@ export default function Cardpost(props) {
     window.location.reload();
   };
 
-  //fonction pour compter les commentaires de chaque post
+  //Fonction pour compter les commentaires de chaque post
   const countComment = (postid) => {
     let newArray = commentArray;
     let filterArray = newArray.filter((i) => {

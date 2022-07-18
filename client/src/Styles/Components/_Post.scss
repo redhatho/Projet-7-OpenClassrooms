@@ -82,9 +82,6 @@
   }
 }
 
-// .profil-post {
-//   display: flex;
-// }
 .img-post {
   width: 100%;
   max-height: 400px;
@@ -119,7 +116,6 @@
   align-items: center;
   object-fit: cover;
   overflow: hidden;
-  // min-height: 300px;
   max-height: 400px;
   width: auto;
   padding: 5px;
@@ -138,7 +134,6 @@
   justify-content: flex-end;
 }
 .date-post {
-  // text-align: start;
   font-size: 12px;
   font-style: italic;
 }
@@ -184,15 +179,3 @@
   display: flex;
   justify-content: center;
 }
-
-// .titre-feed {
-//   text-align: center;
-//   font-size: 35px;
-//   font-style: italic;
-//   margin: 25px 0 10px 0;
-//   text-align: center;
-//   background: linear-gradient(to right, #0e206f 20%, #cd623f 40%, #0e206f 80%);
-
-//   background-clip: text;
-//   color: transparent;
-// }

@@ -8,12 +8,12 @@ const postRoutes = require('./routes/post.routes');
 const commentRoutes = require('./routes/comment.routes');
 const likeRoutes = require('./routes/like.routes');
 
-//IMPORTATION DES variable d'environnement
+//Variable d'environnement
 require('dotenv').config();
 
-// analyse le corps des requetes
+// Analyse le corps des requetes
 const app = express();
-//CORS
+//Paramétrage des CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cross-Origin-Resource-Policy', '*');
@@ -28,16 +28,16 @@ app.use((req, res, next) => {
   next();
 });
 
-//renvoie le corp de la requetes en format json
+//Renvoie le corp de la requetes en format json
 app.use(express.json());
 app.use(cors());
 
-//permet de parser les requêtes envoyées par l'utilisateur
+//Permet de parser les requêtes envoyées par l'utilisateur
 app.use(express.urlencoded({ extended: true }));
 
-//package express rate limit pour limiter les demandes répétées aux API
+//Package express rate limit pour limiter les demandes répétées aux API
 const rateLimit = require('express-rate-limit');
-//configuration de express rate limit
+//Configuration de express rate limit
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
   // 10 minutes
@@ -51,12 +51,12 @@ const limiter = rateLimit({
 // // Applique le middleware rateLimit pour toutes les requêtes
 app.use(limiter);
 
-/*helmet configure de manière appropriée des en-têtes HTTP et aide a protéger 
+/*Helmet configure de manière appropriée des en-têtes HTTP et aide a protéger 
  l'application contre certaines vulnérabilités*/
 const helmet = require('helmet');
 app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 
-//importation des differentes routes :
+//Importation des differentes routes :
 
 app.use('/api/post', postRoutes);
 app.use('/api/user', userRoutes);
@@ -67,7 +67,7 @@ Db.sync({ alter: true })
   .then(console.log('Connexion à la bdd réussie'))
   .catch((error) => console.log(error));
 
-/*gestionnaire de routage qui indique a express qu'il faut gérer
+/*Gestionnaire de routage qui indique a express qu'il faut gérer
 la ressource image de manière statique*/
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

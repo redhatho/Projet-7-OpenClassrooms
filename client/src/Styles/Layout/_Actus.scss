@@ -6,31 +6,17 @@
 }
 .container-cards,
 .content-edit {
-  //  max-width: 70vh;
   padding: 0;
-  // margin: 50px auto;
-
   @media screen and (max-width: 700px) {
-    //  margin: 0 20px;
   }
 }
 
 .card-container {
   border: 2px solid #fd2d01;
-  // margin: 30px 0;
   display: flex;
   border-radius: 10px;
   flex-direction: column;
   width: 100%;
-  // padding: 10px;
-
-  // &:hover {
-  //   transform: scale(1.009);
-  // }
-  // @media screen and (max-width: 980px) {
-  //   margin: 15px;
-  //   width: 80%;
-  // }
 }
 
 .no-feed {

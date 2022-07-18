@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 
-// //IMPORTATION DES variable d'environnement
+// //Variable d'environnement
 require('dotenv').config();
 
 //S'inscrire
@@ -63,7 +63,7 @@ exports.userLogin = (req, res, next) => {
     .catch((error) => res.status(500).json({ error }));
 };
 
-//trouver tous les users
+//Trouver tous les users
 exports.userGetAll = (req, res, next) => {
   User.findAll()
     .then((users) => {
@@ -83,7 +83,7 @@ exports.userGet = (req, res, next) => {
     .catch((error) => res.status(404).json({ error }));
 };
 
-//supprimer un user
+//Supprimer un user
 exports.userDelete = (req, res, next) => {
   let token = req.headers.authorization.split(' ')[1];
   let decodedToken = jwt.verify(token, '${process.env.TOKEN}');
@@ -99,7 +99,7 @@ exports.userDelete = (req, res, next) => {
   }
 };
 
-//modifier un user
+//Modifier un user
 exports.userModify = (req, res) => {
   let token = req.headers.authorization.split(' ')[1];
   let decodedToken = jwt.verify(token, '${process.env.TOKEN}');
@@ -112,14 +112,13 @@ exports.userModify = (req, res) => {
         const filename = user.profilePicture.split('/images/')[1];
         const userObject = req.file
           ? {
-              ...req.body,
-              profilePicture: `${req.protocol}://${req.get('host')}/images/${
-                req.file.filename
+            ...req.body,
+            profilePicture: `${req.protocol}://${req.get('host')}/images/${req.file.filename
               }`,
-            }
+          }
           : {
-              ...req.body,
-            };
+            ...req.body,
+          };
         User.update({ ...userObject }, { where: { id: req.params.id } })
           .then(() => {
             if (filename && req.file) {

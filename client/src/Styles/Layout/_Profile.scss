@@ -14,7 +14,7 @@
   color: $color-primary;
 }
 
-// et on masque le input
+// Et on masque le input
 #file {
   display: none;
 }
@@ -115,7 +115,6 @@
     margin-bottom: 10px;
     overflow: hidden;
     @media screen and (max-width: 1200px) {
-      // width: 100%;
     }
   }
 }

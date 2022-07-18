@@ -44,7 +44,7 @@ export default function Profile() {
     dataAxios();
   }, [id, accessToken]);
 
-  //fonction pour modifier et sauver les informations de profil
+  //Fonction pour modifier et sauver les informations de profil
   const saveUpdateProfil = (e) => {
     axios
       .put(
@@ -67,7 +67,7 @@ export default function Profile() {
       });
   };
 
-  //fonction pour modifier la photo du user
+  //Fonction pour modifier la photo du user
   const modifyPicture = () => {
     const formData = new FormData();
     formData.append('images', profilePicture);
@@ -95,7 +95,7 @@ export default function Profile() {
     }
   };
 
-  //suppression du compte
+  //Suppression du compte
 
   const deleteAccount = () => {
     axios
@@ -115,7 +115,7 @@ export default function Profile() {
         console.error(error);
       });
     console.log('suppression du compte');
-    //message de confirmation de suppression du compte
+    //Message de confirmation de suppression du compte
   };
 
   return (

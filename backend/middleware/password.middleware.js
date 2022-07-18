@@ -1,4 +1,3 @@
-//importation du password validator
 const passwordValidator = require('password-validator');
 
 const passwordSchema = new passwordValidator();
@@ -23,7 +22,7 @@ module.exports = (req, res, next) => {
     next();
   } else {
     return res.status(401).json({
-      message: `Votre mot de passe n'est pas assez sécurisé: 6 caractères min, 20 max, 1 maj, 1 min, 1 chiffre minimum et pas d'espace svp. `,
+      message: `Votre mot de passe n'est pas assez sécurisé: Il faut au moins 6 caractères, 20 max, 1 maj, 1 min, 1 chiffre minimum et pas d'espace. `,
     });
   }
 };
