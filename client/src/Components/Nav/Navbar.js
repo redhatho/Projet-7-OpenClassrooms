@@ -40,7 +40,7 @@ export default function Nav() {
               alt="img profil"
               src={userData.profilePicture}
             ></img>
-            <h1> Hello {userData.firstName}</h1>
+            <h1> Heureux de vous retrouver {userData.firstName}</h1>
           </div>
         ) : (
           <div></div>
@@ -49,7 +49,7 @@ export default function Nav() {
           <NavLink className="nav-link" to="/">
             Actus
           </NavLink>
-         
+
           <NavLink className="nav-link" to="/profil/:id">
             <FaUserAlt className='="nav-link__icon' /> Profil
           </NavLink>
